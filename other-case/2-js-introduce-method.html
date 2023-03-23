@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS三种使用方式</title>
+  <!-- 1.网页内部以script标签引入 -->
+  <script type="text/javascript">
+    //单行注释   document.write('哈哈哈');
+    /*多行注释
+    document.write('哈哈哈');
+    document.write('哈哈哈');
+    */
+    document.write('哈哈哈');
+  </script>
+  <!-- 2.通过script
+    标签以外部文件引入 -->
+  <script src="./js/inruduce.js"></script>
+</head>
+<body>
+  <!-- 3.将js代码编写到指定属性中 -->
+  <br>
+  <button onclick="alert('哈哈哈哈')">点我试试</button><br>
+  <a href="javascript:alert(123)">链接</a>
+</body>
+</html>
