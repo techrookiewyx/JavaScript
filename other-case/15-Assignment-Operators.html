@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>赋值运算符</title>
+  </head>
+  <body>
+    <h1>赋值运算符</h1>
+    <div id="box"></div>
+  </body>
+  <script>
+    //赋值运算符 =
+    var a = 10; //表示将右侧的值，赋值给左侧变量
+    var b = a;
+    b + 11;
+    console.log(b); //此时 b的值还是10 因为没有进行赋值
+    // a-=n 等价于 a=a-n
+    b-=5;
+    console.log(b);
+    // a+=n 等价于 a=a+n
+    a = a + 5;
+    console.log(a);
+
+    a = 10;
+    a += 5; //该条语句与上边的a=a+5效果一样
+    console.log(a);
+
+    // ??=   表示空赋值只有当变量值为null或undefined时才会对变量赋值
+    var e = null;
+    e ??= 100;
+    document.getElementById("box").innerHTML = e;
+  </script>
+</html>
