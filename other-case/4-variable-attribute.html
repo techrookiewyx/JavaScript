@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS中变量的其他特点</title>
+  <script>
+    // 变量提升-所有声明的变量，都会被提升到代码头部
+    console.log(a);
+    var a=1;   
+    /*上边两行代码是错误的写法，但不会报错因为存在变量提升
+     如下是真正的执行顺序
+     var a; 
+     console.log(a);
+     a=1;
+    */
+
+
+
+    var b,c; //可以同时声明多个变量
+    b=1;
+    console.log(b);
+    b='你好';   //js中变量没有类型，可以随时更改
+    console.log(b);
+
+    var d=5;
+    var d    //变量的重复声明是无效的
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
