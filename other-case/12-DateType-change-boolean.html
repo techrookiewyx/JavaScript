@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS中数据类型转换-布尔值</title>
+    <script>
+      //使用Boolean（）函数将其他类型值转换为布尔值
+      var a = 10;
+      console.log(typeof a, a);
+      a=Boolean(a);
+      console.log(typeof a, a);
+      
+      a=0;
+      console.log(typeof a, a);
+      a=Boolean(a);
+      console.log(typeof a, a);
+
+      a=NaN;
+      console.log(typeof a, a);
+      a=Boolean(a);
+      console.log(typeof a, a);
+
+      a=Infinity;
+      console.log(typeof a, a);
+      a=Boolean(a);
+      console.log(typeof a, a);
+
+
+      //字符串转换为布尔值
+      b="0"
+      console.log(typeof b, b);
+      b=Boolean(b);
+      console.log(typeof b, b);
+
+      b=""
+      console.log(typeof b, b);
+      b=Boolean(b);
+      console.log(typeof b, b);
+
+      c=null;
+      console.log(typeof c, c);
+      c=Boolean(c);
+      console.log(typeof c, c);
+
+      
+    </script>
+  </head>
+  <body>
+    <h1>JS中数据类型转换-布尔值</h1>
+  </body>
+</html>
