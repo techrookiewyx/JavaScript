@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>运算符优先级</title>
+  <script>
+  /*
+    对于运算符的优先级我们需要知道
+       - 对于算术运算符来说和数学一样，先乘除后加减
+       - 优先级越高越先执行，优先级相同一般自左向右执行
+       - ()的优先级最高
+  */  
+   var a = 3 + 5 * 2;
+   console.log(a);
+
+   //我们不知道在一组运算符中谁的优先级高时，可以使用小括号来改变优先级
+   var a = 5;
+   var b = ++a +  5 * 2;
+   console.log(b);
+   a =5;
+   var b = (++a +  5) * 2;
+   console.log(b);
+  </script>
+</head>
+<body>
+  <h1>运算符优先级</h1>
+</body>
+</html>
