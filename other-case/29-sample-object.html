@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简单对象的创建</title>
+</head>
+<body>
+  <h1>对象的创建</h1>
+</body>
+<script>
+  //对象是JS中的复合数据类型，相对于一个容器可以存储不同类型的数据
+
+  var obj=new Object(); //创建一个空对象
+  obj.name="张三"; //向对象中添加属性
+  obj.age=18;
+  obj.sex="男";
+  console.log(obj)
+  delete obj.name;  //删除属性
+  console.log(obj.name);
+</script>
+</html>
