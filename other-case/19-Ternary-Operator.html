@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS中的三元运算符</title>
+</head>
+<body>
+  <h1>三元运算符</h1>
+  <div id="box"></div>
+</body>
+<script>
+   //需要三个操作数，其结构是 条件表达式?表达式1:表达式2，其含义是当条件表达式为真则结果为表达式1，当条件表达式为假则结果为表达式2
+   var a = 10;
+   var b = 20;
+   //当a大于b时，将a赋值给max，当a小于b时，将b赋值给max
+   var max = a > b ? a : b ;
+   document.getElementById("box").innerHTML="最大值为："+max;
+</script>
+</html>
