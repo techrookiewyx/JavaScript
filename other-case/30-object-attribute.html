@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的属性</title>
+</head>
+<body>
+  <h1>对象属性</h1>
+</body>
+<script>
+  //通常属性名实质就是一个字符串
+   var obj=new Object();
+  // obj.if="你好";  //没有特殊要求可以使任何值（包括关键字和保留字）,但一般不建议这样起名
+  // obj.var=18;
+   obj["sex"]="男";
+  // obj['123as@!#']="嘻嘻"; //特殊的属性名（不报错） 但一般不使用
+   var mySymbol=Symbol(); //创建一个symbol
+   obj[mySymbol]="通过symbol添加属性"  //使用symbol作为属性名
+
+   //通过变量的方式添加对象
+   var str="address";
+   obj[str]="花果山"; //等价于 obj['address']
+   
+   console.log(obj[str]);
+   console.log(obj['address']);
+   console.log('sex' in obj); //检查对象里是否包含某个属性
+  //  console.log(obj.sex);
+  //  console.log(obj['sex']); 
+</script>
+</html>
