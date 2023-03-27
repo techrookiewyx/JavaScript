@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象</title>
+  </head>
+  <body>
+    <h1>window对象</h1>
+  </body>
+  <script>
+    // window对象代表的是浏览器窗口，通过该对象可以对浏览器窗口进行操作
+    //window对象的属性我们可以通过window对象访问，也可以直接访问
+
+    // alert("123")
+    // window.alert("234");
+    console.log(555);
+    window.console.log(666);
+
+    //向window对象中添加的属性会自动成为全局变量
+    window.a = 10;
+    console.log(window.a);
+    console.log(a);
+
+    //在全局中使用var声明的变量，会作为window对象的属性保存
+    var b = 25; //等价于 window.b=25;
+    console.log(window.b);
+
+    function ce1() {
+      d = 32; //在局部作用域中，没有使用关键字声明的变量，会自动成为window对象的属性—也就是全局变量
+    }
+    ce1();
+    console.log(d);
+
+    //练习
+    var a = 1;
+    function fn() {
+      a = 2; //这里相当于给a重新赋值
+      console.log(a); //输出2
+    }
+    fn();
+    console.log(a); //输出2  函数中的a就是函数外声明的全局变量a
+
+    //变量和函数的提升同样适用于函数作用域
+    var a = 1;
+    function fn2() {
+      //因为作用域链的关系会首先在函数内部寻找，而变量提升适用于函数作用域也就是说，实际代码执行是 var a;  让后打印  最后赋值
+      console.log(a); //输出undefined
+      var a = 2;
+      console.log(a); // 输出2
+    }
+    fn2();
+    console.log(a); //输出1 因为函数中的var是局部变量
+
+    var a = 1;
+    function fn3(a) {
+      console.log(a); //输出1
+      a = 2;
+      console.log(a); //输出2
+    }
+    fn3(a); //这里的实参a传递的是 全局变量中a的值
+    console.log(a); //输出1
+
+
+
+
+    
+    console.log(u); //输出 函数2
+    var u = 1;
+    console.log(u); //输出 1
+    function u() {
+      //函数的提升是整个函数（包括函数体一）
+      alert(2);
+    }
+    console.log(u); //输出 1
+    var u = 3;
+    console.log(u); //输出3
+    var u = function () {
+      alert(4);
+    };
+    console.log(u); //输出 函数4
+    var a;
+    console.log(u); //输出 函数4
+  </script>
+</html>
