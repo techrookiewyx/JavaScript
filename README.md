@@ -58,16 +58,16 @@
 
 1. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/29-sample-object.html) | 对象的创建
 2. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/30-object-attribute.html) | 对象的属性
-2. 对象枚举属性
-2. 对象的其他特点
+2. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/31-Enumeration-Attribute.html) | 对象枚举属性
+2. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/32-Quote-DateType.html) | 对象的其他特点
 
 ## 7. JavaScript函数
 
-1. 函数的创建、调用
-2. 函数的参数（形参、实参）
-3. 使用对象作为函数参数
-4. 使用函数作为函数参数
-5. 函数的返回值
-6. 全局和局部作用域
-7. 作用域链
-8. window对象
+1. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/33-function.html) | 函数的创建、调用
+2. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/34-function-parameter.html) | 函数的参数（形参、实参）
+3. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/35-function-objectParameter.html) | 使用对象作为函数参数
+4. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/36-function-functionParameter.html) | 使用函数作为函数参数
+5. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/37-function-return.html) | 函数的返回值
+6. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/38-scope.html) | 全局和局部作用域
+7. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/39-scope-chain.html) | 作用域链
+8. [代码](https://github.com/techrookiewyx/JavaScript/blob/main/other-case/40-window-target.html) | window对象
