@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的返回值</title>
+  </head>
+  <body>
+    <h1>函数返回值</h1>
+  </body>
+  <script>
+    function sum(a, b) {
+      return a + b; //可以通过return来指定函数的返回值，函数执行完毕返回值作为结果返回
+    }
+    var a = sum(5, 7);
+    console.log(a);
+    console.log(sum(10, 8));
+
+    a = sum(a, 23);
+    console.log(a);
+
+    function re() {
+      return { name: "tom" }; //- 任何值都可以作为函数的返回值 return执行后函数立即结束
+      alert("abc");
+    }
+    var b = re();
+    console.log(b);
+
+    function ce() {
+      return; //若return后不跟任何值或者不写return，则相当于返回一个undefined
+    }
+    var b = ce();
+    console.log(b);
+  </script>
+</html>
