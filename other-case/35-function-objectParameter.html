@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象作为函数参数</title>
+  </head>
+  <body>
+    <h1>对象作为函数参数</h1>
+  </body>
+  <script>
+    function fn(a){
+      a.name="jerry"
+      console.log("a=",a.name);
+    } 
+    var obj={
+      name:"tom"
+    }
+    fn(obj);  // 当传递的实参为变量时，传递的不是变量，而是变量中的值
+    console.log("obj=",obj.name);
+
+
+    var obj2={name:'孙悟空'}
+    //函数的每次调用，都会重新创建默认值
+    function fn2(b={name:'孙悟空'}){
+      console.log("b=",b.name);
+      b.name="猪八戒";
+      console.log("b=",b.name);
+    }
+    fn2();
+    fn2();
+  </script>
+</html>
