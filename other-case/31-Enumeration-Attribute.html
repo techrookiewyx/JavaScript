@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的枚举属性</title>
+</head>
+<body>
+  <h1>对象的枚举属性</h1>
+</body>
+<script>
+  //枚举属性，指获取对象中的所有属性，使用for-in语句
+  var obj ={
+    age : 18,
+    sex : '男',
+    name : 'tom',
+    [Symbol()] : 'aaa'   //枚举无法获取符号添加的属性
+  }
+  for(var proName in obj){
+    console.log(proName , obj[proName]);
+  }
+</script>
+</html>
