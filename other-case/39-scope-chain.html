@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作用域链</title>
+  </head>
+  <body>
+    <h1>作用域链</h1>
+  </body>
+  <script>
+    /*
+      当我们使用一个变量时，JS解析器会优先在当前作用域中寻找该变量，找到了则使用。
+      若没找到，则依次向上一层中寻找，直到找到然后使用。
+      若一直没找到则会报错显示该变量问定义
+    */
+    let a=5;
+    {
+      let a=6;
+      {
+        let a=7;
+        console.log(a);
+      }
+    }
+  </script>
+</html>
