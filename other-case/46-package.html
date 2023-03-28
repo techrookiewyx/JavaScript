@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>封装</title>
+</head>
+<body>
+  <h1>封装</h1>
+</body>
+<script>
+  //封装主要是为了数据的安全
+  class Person{
+    #age   //通过#声明的属性会变成私有属性，私有属性只能在类内部访问
+    #name
+    #sex
+    constructor(age,name,sex){
+        this.#age=age; //私有属性必须要先声明才能使用
+        this.#name=name;
+        this.#sex=sex;
+    }
+    //通过set和get创建的方法来开放对数据的操作
+    get age(){  //调用该方法可以在类外部获取到对应属性
+      return this.#age
+    }
+    set age(age){ //代用该方法可以在类外部设置属性
+      this.#age=age;
+    }
+  }
+  var p1=new Person(15,'张三','男');
+  p1.age=11
+  console.log(p1);
+</script>
+</html>
