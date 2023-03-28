@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数</title>
+  </head>
+  <body>
+    <h1>构造函数</h1>
+  </body>
+  <script>
+    //在类中可以添加一个特殊的方法constructor（构造函数）
+    class Person{
+      constructor(name ,age ,sex){
+        this.age=age; //在构造函数中对属性进行赋值 this表示当前创建的对象指的是p1
+        this.name=name;
+        this.sex=sex;
+        console.log('构造函数执行了'); //构造函数在使用类实例化对象时调用
+      }
+    }
+    var p1=new Person('tom',16,'男');
+    console.log(p1);
+  </script>
+</html>
