@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>类的属性和方法</title>
+  </head>
+  <body>
+    <h1>类的属性和方法</h1>
+  </body>
+  <script>
+    //类的代码块用来设置对象的属性
+    class Person{
+      name   //person实例所拥有的属性
+      age     
+      static test="哈哈" //使用static声明的属性是静态属性,只能通过类去访问Person.test
+      print(){
+        console.log("我是方法"); //添加方法（实例方法），实例方法中this就是当前实例
+      }
+      static t2(){
+        console.log("我是静态方法"); //使用static声明的方法是静态方法
+      }
+    }
+    var p1 = new Person();
+    var p2 = new Person();
+    p1.print();
+    Person.t2();
+    console.log(p1);
+    console.log(p2);
+  </script>
+</html>
