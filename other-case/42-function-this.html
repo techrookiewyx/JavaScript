@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数中的this</title>
+</head>
+<body>
+  <h1>函数中的this</h1>
+</body>
+<script>
+  //函数在执行时，JS解析器每次都会传递一个隐含的参数（this）
+  //this会指向一个对象，this所指向的对象会根据函数调用方式的不同而改变
+  function fn() {
+    console.log(this);
+  }
+  //以函数方式调用时，this指向的window
+  fn();
+
+
+  var obj={name:'孙悟空'};
+  obj.test=fn;
+  //以方法的方式调用时，this指向的是调用方法该对象
+  obj.test();
+
+  var obj2={name:'猪八戒',test:fn};
+  obj2.test();
+
+  //this的主要作用就是通过this在方法中引用调用方法的对象
+  var obj3={
+    name:'唐僧',
+    print:function(){
+      console.log(this.name);
+    }
+  }
+  obj3.print();
+</script>
+</html>
