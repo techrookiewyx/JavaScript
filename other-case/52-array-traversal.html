@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的遍历</title>
+  </head>
+  <body>
+    <h1>数组的遍历</h1>
+  </body>
+  <script>
+    //数组虽然可以存储不同类型的数据，但我们创建数组时要尽量确保是相同类型的数据
+    var arr = [1, "tom", true, { name: "孙悟空" }, 5];
+    //遍历数组就是获取数组中的每一个元素
+
+    //方法1
+    var arr2 = [1, 5, 2, 8, 523, 87, 23];
+    for (var i = 0; i < arr2.length; i++) {
+      console.log(arr2[i]);
+    }
+    //方法2  逆向变量
+    // for (var j = arr2.length - 1; j >= 0; j--) {
+    //   console.log(arr2[j]);
+    // }
+    
+    //方法3 for-of遍历数组
+    for(var s of arr2){
+      console.log(s);
+    }
+
+    //练习
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    }
+    var pArr = [
+      new Person("tom", 16), 
+      new Person("jerry", 14), 
+      new Person("liming", 18)
+    ];
+    for(var q=0;q<pArr.length;q++){
+       if(pArr[q].age<18){
+        console.log(`年龄为${pArr[q].age},姓名为${pArr[q].name}`)
+       }
+    }
+  </script>
+</html>
