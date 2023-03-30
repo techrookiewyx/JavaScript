@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高阶函数</title>
+  </head>
+  <body>
+    <h1>高阶函数</h1>
+  </body>
+  <script>
+    //将函数作为参数或返回值，则这个函数成为高阶函数
+
+    //要求  不修改someFn的前提下，为其增加日志记录功能
+    function someFn(){
+      return 'hello';
+    }
+    function outer(cb){ //可以把someFn作为参数
+       return function(){
+          console.log('记录日志');
+          var res=cb();
+          return res;  
+       }
+    }
+    function test(){
+       console.log('test');
+       return 'test';
+    }
+    var res1=outer(someFn);
+    var newTest=outer(test); //在test函数基础上扩展日志功能
+    console.log(res1);
+    console.log(res1());
+  </script>
+</html>
