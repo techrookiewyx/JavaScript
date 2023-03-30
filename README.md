@@ -53,8 +53,8 @@
 
 1. [代码](other-case/29-sample-object.html) | 对象的创建
 2. [代码](other-case/30-object-attribute.html) | 对象的属性
-2. [代码](other-case/31-Enumeration-Attribute.html) | 对象枚举属性
-2. [代码](other-case/32-Quote-DateType.html) | 对象的其他特点
+3. [代码](other-case/31-Enumeration-Attribute.html) | 对象枚举属性
+4. [代码](other-case/32-Quote-DateType.html) | 对象的其他特点
 
 ## 7. JavaScript函数
 
@@ -66,8 +66,8 @@
 6. [代码](other-case/38-scope.html) | 全局和局部作用域
 7. [代码](other-case/39-scope-chain.html) | 作用域链
 8. [代码](other-case/40-window-target.html) | window对象
-8. [代码](other-case/41-Execute-funciton.html) | 立即执行函数
-8. [代码](other-case/42-function-this.html) | 函数中的this
+9. [代码](other-case/41-Execute-funciton.html) | 立即执行函数
+10. [代码](other-case/42-function-this.html) | 函数中的this
 
 ## 8. 面向对象编程
 
@@ -76,4 +76,36 @@
 3. [代码](other-case/45-constructor-function.html) | 类的属性和方法
 4. [代码](other-case/46-package.html) | 封装
 5. [代码](other-case/47-polymorphic.html) | 多态
-5. [代码](other-case/48-extends.html) | 继承
+6. [代码](other-case/48-extends.html) | 继承
+7. [代码](other-case/49-prototype.html) | 简单了解原型
+8. [代码](other-case/50-instanceof_hasOwn.html) | instanceof和hasOwn
+
+## 9. JavaScript数组
+
+1. [代码](other-case/51-array.html) | 数组的基本使用
+2. [代码](other-case/52-array-traversal.html) | 数组的遍历 
+3. [代码](other-case/53-array-methods.html) | 数组的方法-Array.isArray()
+4. [代码](other-case/53-array-methods.html) | 数组的方法-at()
+5. [代码](other-case/53-array-methods.html) | 数组的方法-concat()
+6. [代码](other-case/53-array-methods.html) | 数组的方法-indexOf()
+7. [代码](other-case/53-array-methods.html) | 数组的方法-join()
+8. [代码](other-case/53-array-methods.html) | 数组的方法-slice()
+9. [代码](other-case/54-array-copy.html) | 对象的复制
+10. [代码](other-case/55-array-push.html) | 数组的方法-push()
+10. [代码](other-case/56-array-pop.html) | 数组的方法-pop()
+10. [代码](other-case/57-array-unshift.html) | 数组的方法-unshift()
+10. [代码](other-case/58-array-splice.html) | 数组的方法-splice()
+10. [代码](other-case/59-array-reverse.html) | 数组的方法-reverse()
+11. [代码](other-case/60-array-remove-repeat.html) | 数组的去重
+12. [代码](other-case/61-array-bubble-sort.html) | 冒泡排序
+13. [代码](other-case/62-select-sort.html) | 选择排序
+
+## 10. 函数的高阶应用
+
+1. [代码](other-case/63-function-encapsulation.html) | 封装函数
+2. [代码](other-case/64-funciton-callback.html) | 回调函数
+3. [代码](other-case/65-higtOrder-function.html) | 高阶函数
+4. [代码](other-case/66-closure.html) | 闭包
+5. [代码](other-case/67-closure-principle.html) | 词法作用域
+6. [代码](other-case/68-function-recurrence.html) | 函数的递归
+7. [代码](other-case/69-recurrence-exercise.html) | 递归的练习
