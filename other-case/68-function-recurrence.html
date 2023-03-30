@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的递归</title>
+  </head>
+  <body>
+    <h1>函数的递归</h1>
+  </body>
+  <script>
+    //一个函数调用自身称为递归，递归类似于循环
+    
+    // 创建一个函数，求任意数的阶乘
+     function jieCheng(num){
+        let res=1;
+        for(i=1;i<=num;i++){
+           res*=i;
+        }
+        return res;
+     }
+     var res1=jieCheng(5);
+     console.log(res1);
+
+     //递归实现
+     function jieCheng2(num){
+        if(num==1){
+          return 1;
+        }else{
+          return jieCheng2(num-1)*num;
+        }
+     }
+     var res2=jieCheng2(5);
+     console.log(res2);
+  </script>
+</html>
