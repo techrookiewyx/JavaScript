@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的方法-bind</title>
+  </head>
+  <body>
+    <h1>函数的方法-bind</h1>
+  </body>
+  <script>
+    //bind是函数的方法，用来创建一个新的函数并为新函数绑定this和参数
+
+    function fn(a,b,c) {
+      console.log(a);
+      console.log(b);
+      console.log(c);
+      console.log(this);
+    }
+    var obj = {
+      name: "tom",
+      age: 19,
+    };
+    var newFn=fn.bind(obj); //通过bind绑定的this无法修改
+    newFn();
+    var newFn2=fn.bind(obj,10); //通过bind绑定的参数默无法修改
+    newFn2(2,3,4);
+  </script>
+</html>
