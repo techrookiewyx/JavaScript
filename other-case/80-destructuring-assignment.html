@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组解构赋值</title>
+  </head>
+  <body>
+    <h1>数组解构赋值</h1>
+  </body>
+  <script>
+    //数组中的值或对象的属性取出，赋值给其他变量
+    var arr =[10,20,30];
+    var [a,b,c]=arr; //将arr数组中的元素分别赋值给a,b,c
+    console.log(a,b,c);
+    var [d,e,f,g]=[1,2,3,4]; 
+    console.log(d,e,f,g); 
+    [d,e,f,g]=[5,6,7]; //g=g相当于给g一个默认值（之前的值）
+    console.log(d,e,f,g);  //g为undefined
+
+    var [q,w,...e]=[11,22,33,44]
+    console.log(q,w,e);
+
+   
+    var a1=10;
+    var a2=20;
+    console.log("a1:",a1," a2:",a2);
+    [a1,a2]=[a2,a1]; //可以通过解构赋值快速交换两个变量的值
+    console.log("a1:",a1," a2:",a2);
+  </script>
+</html>
