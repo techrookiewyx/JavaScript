@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的方法-forEach</title>
+  </head>
+  <body>
+    <h1>数组的方法-forEach</h1>
+  </body>
+  <script>
+    //forEach用来遍历数组，它需要一个回调函数作为参数，数组中有几个元素该函数就被调用几次
+    //该函数有三个参数
+    var arr=['唐僧','猪八戒','孙悟空','沙僧'];
+    arr.forEach(function(element,index,array){
+        console.log(element); //element代表数组中的元素
+        console.log(index);  //index代表元素的下标
+        console.log(array); //array代表遍历的数组
+    })
+
+  </script>
+</html>
