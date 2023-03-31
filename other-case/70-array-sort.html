@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的方法-sort</title>
+  </head>
+  <body>
+    <h1>数组的方法-sort</h1>
+  </body>
+  <script>
+    //来对数组进行排序，sort默认将数组进行升序排序
+
+    //sort默认按照Unicode编码进行排序，当用sort对数字进行排序时可能会得到一个错误的结果
+    var arr =[1,5,7,9,34,10,3]
+    arr.sort();
+    console.log(arr); //输出结果不符合预期
+
+    //可以传递一个回调函数作为参数，通过回调函数来指定排序规则
+    
+    arr.sort(function(a,b){return a-b}); //升序排列
+    arr.sort(function(a,b){return b-a}); //降序
+    console.log(arr);
+  </script>
+</html>
