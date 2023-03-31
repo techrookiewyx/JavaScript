@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的方法-filter</title>
+  </head>
+  <body>
+    <h1>数组的方法-filter</h1>
+  </body>
+  <script>
+    //filter过滤（筛选）数组中复合条件的元素并返回
+    var arr = [1,5,7,2,4,9,12,65,48]
+    //// 筛选出大于5的元素放到新数组中
+    var res = arr.filter(function(element){
+       return element>5
+    })
+    console.log(res);
+  </script>
+</html>
