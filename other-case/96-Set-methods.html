@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set集合的常用方法</title>
+  </head>
+  <body>
+    <h1>Set集合的常用方法</h1>
+  </body>
+  <script>
+    //add() 向集合中添加元素
+    var st = new Set();
+    st.add(10);
+    st.add('tom');
+    console.log(st);
+    //delete（ele）  删除集合中某个元素
+    st.delete(10)
+    console.log(st);
+    st.add(15);
+    console.log(st.has(15)); // has(ele)  检查集合中是否存在某个元素
+
+  </script>
+</html>
