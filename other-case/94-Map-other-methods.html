@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map对象的其他方法</title>
+  </head>
+  <body>
+    <h1>Map对象的其他方法</h1>
+  </body>
+  <script>
+    var map = new Map(); 
+    map.set('name','孙悟空');
+    map.set('age',16);
+    map.set('sex','男');
+    //keys() 获取map对象中的所有键
+    console.log(map.keys());  
+    //通过keys获取key
+    for (var k of map.keys()){
+       console.log(k);
+    }
+
+    //values() 获取map对象中的所有值
+    console.log(map.values());
+     //通过values获取value
+     for (var v of map.values()){
+       console.log(v);
+    }
+  </script>
+</html>
