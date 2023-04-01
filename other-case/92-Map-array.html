@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map与数组的转换</title>
+  </head>
+  <body>
+    <h1>Map与数组的转换</h1>
+  </body>
+  <script>
+    //Map对象转为数组
+    var map =new Map();
+    map.set('name','孙悟空');
+    map.set('age',16);
+    map.set('sex','男');
+    var arr = Array.from(map); //通过数组的from方法完成转换
+    console.log(arr); // 输出一个二维数组 每对键值对是一个数组 所有键值对又被一个数组包裹
+    var arr2=[...map];
+    console.log(arr2);  //通过展开运算符完成转换
+
+    //数组转换为Map
+    var map2 = new Map([["name","猪八戒"],[{},()=>{}]]); //需要传一个二维数组
+    console.log(map2);
+  </script>
+</html>
