@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date对象的创建</title>
+  </head>
+  <body>
+    <h1>Date对象的创建</h1>
+  </body>
+  <script>
+    //在JS中所有和时间有关的数据都有Date对象来表示
+
+    var res = new Date(); //通过new Date()创建时间对象时，它创建的是当前时间的对象(会发生改变的)
+    console.log(res);
+
+    //通过在Date()的构造函数中，传递一个表示时间的字符串来指定时间
+    var d = new Date("12/23/2012 12:21:30");
+    console.log(d);
+    var d2 = new Date("2000-09-01T12:21:23");              
+    console.log(d2);
+  </script>
+</html>
