@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过document对象获取页面元素</title>
+  </head>
+  <body>
+    <h1>通过document对象获取页面元素</h1>
+    <button id="btn">点我一下</button>
+    <script>
+      //document代表整个网页，我们可以通过document对象获取页面中其他对象来操作页面
+      
+      //获取btn对象
+      var btn= document.getElementById("btn");
+      console.log(btn);
+      btn.innerHTML="Click Me";
+    </script>
+  </body>
+</html>
