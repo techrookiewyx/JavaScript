@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>正则表达式语法规则</title>
+  </head>
+  <body>
+    <h1>正则表达式语法规则</h1>
+  </body>
+  <script>
+    // | 表示左边或右边
+    var reg = /ab|cd/;
+    var str = "acb"; //false
+    str = "ab"; //true
+    str = "cd"; //true
+    str = "c"; //false
+    //  [abc]  表示字符集有a或b或c
+    var reg2 = /[abcd]/;
+    var str2 = "abs"; //true
+    var str2 = "oapsd"; //true
+    var str2 = "1qs"; //false
+    console.log(reg2.test(str2));
+    //.   表示除了换行外的任意字符
+    var reg3 = /./;
+    var str3 = "\n"; //false
+    var str3 = "$#@"; //ture
+    // \w  表示任意单词字符（指a-z、A-Z、0-9和下划线）
+    var reg4 = /\w/;
+    var str4 = "a"; //
+    var str4 = "A";
+    var str4 = "-";
+    // ^ 表示开头  $ 表示结尾
+    var reg5 = /^abs$/;  // s$表示以s结尾
+    var str5 = "aca"; //false
+    var str5 = "ca"; //false
+    var str5 = "abs"; //true 
+    //a{x}  表示a要出现x次  
+    var reg6 = /a{3}/;
+    var str6= "ababab"; //falese
+    var str6 = "baaac" //ture
+    // a+ 表示a至少出现一次  a* 表示有没有a都行
+    var reg7=/^ca+/;
+    var str7="cbac"; //false
+    var str7="caabc" //true
+  </script>
+</html>
