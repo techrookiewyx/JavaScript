@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String的方法-subString</title>
+  </head>
+  <body>
+    <h1>String的方法-subString</h1>
+  </body>
+  <script>
+    //根据给定字符串进行切片并返回新的字符串
+    var str = 'abc asdw hpw ase';
+    var res = str.substring(5,8);
+    console.log(res);
+    var res = str.substring(8,5); //subString能自动交换参数的位置 并保持结果不变
+    console.log(res);
+  </script>
+</html>
