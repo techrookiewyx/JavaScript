@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素添加-insertAdjacentHTML</title>
+  </head>
+  <body>
+    <h1>元素添加-insertAdjacentHTML</h1>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮1</button>
+    <hr />
+    <ul id="list">
+      <li id="skw">孙悟空</li>
+      <li id="zbj">猪八戒</li>
+      <li id="ts">唐僧</li>
+    </ul>
+    <script>
+      //点击按钮 ，向ul中添加一个沙河尚
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var list = document.getElementById("list");
+      btn1.addEventListener("click",function(){
+          //insertAdjacentHTML也有两个参数，它能像innerHTML一样直接向元素中添加html代码
+          list.insertAdjacentHTML("afterbegin","<li id='shs'>沙和尚</li>"); 
+      })
+    </script>
+  </body>
+</html>
