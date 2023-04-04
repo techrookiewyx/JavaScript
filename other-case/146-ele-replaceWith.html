@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素添加-insertAdjacentHTML</title>
+  </head>
+  <body>
+    <h1>元素添加-insertAdjacentHTML</h1>
+    <button id="btn2">按钮1</button>
+    <hr />
+    <ul id="list">
+      <li id="skw">孙悟空</li>
+      <li id="zbj">猪八戒</li>
+      <li id="ts">唐僧</li>
+    </ul>
+    <script>
+      //点击按钮2 将孙悟空替换为其他内容
+      btn2.addEventListener("click", function () {
+        var li = document.createElement("li");
+        li.textContent = "白骨精";
+        li.id = "bgj";
+        let skw = document.getElementById("skw");
+        skw.replaceWith(li);
+      });
+    </script>
+  </body>
+</html>
