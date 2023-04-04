@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文档加载</title>
+    <script>
+      //当script标签写在head中时，该标签中的内容会先执行，而此时页面还没有渲染出来，这时会出现无法获取到DOM对象的情况（相应的对象还没有创建出来）
+      // var btn = document.getElementById("btn");
+      // console.log(btn); //输出null
+      //解决方案 1 将script标签写在body最后
+      // 2  将代码编写到window.onload()中，window.onload（）会在窗口中的内容加载完毕后才触发
+      //  window.onload=(function(){
+      //   var btn = document.getElementById("btn");
+      //   console.log(btn); //输出null
+      //  })
+      //3 将代码编写到document对象的DOMContentLoaded的回调函数中(必须通过addEventListener添加)，会在当前文档加载完毕后触发
+      document.addEventListener("DOMContentLoaded", function () {
+        var btn = document.getElementById("btn");
+        console.log(btn);
+      });
+      //4 将代码编写到外部js文件中，然后以defer的形式进行引入
+    </script>
+  </head>
+  <body>
+    <h1>文档加载</h1>
+    <button id="btn">我是按钮</button>
+  </body>
+</html>
