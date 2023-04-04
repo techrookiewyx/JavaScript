@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取元素节点对象</title>
+  </head>
+  <body>
+    <h1>获取元素节点对象</h1>
+    <button id="btn">点我</button>
+    <p class="p1">111</p>
+    <p class="p1">222</p>
+    <p class="p1">333</p>
+    <p class="p1">444</p>
+    <p class="p1">555</p>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+  </body>
+  <script>
+    //document.getElementById 通过id获取一个元素的节点对象
+    var btn = document.getElementById("btn");
+    console.log(btn);
+    //document.getElementsByClassName 根据元素的class属性值获取一组元素节点对象
+    var pgp = document.getElementsByClassName("p1");
+    console.log(pgp);
+    for(var i=0; i<pgp.length;i++){
+        pgp[i].innerText="哈哈"+i;
+    }
+    //document.getElementsByTagName 根据标签名获取一组元素节点对象
+    var divs = document.getElementsByTagName("div");
+    console.log(divs);
+
+  </script>
+</html>
