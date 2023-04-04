@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过元素获取其兄弟节点或元素</title>
+  </head>
+  <body>
+    <h1>通过元素获取其兄弟节点或元素</h1>
+    <div id="box">
+      我是box1
+      <span>我是span1</span>
+      <span>我是span2</span>
+    </div>
+    <span>我是span</span>
+
+    <script>
+      var bx = document.getElementById("box");
+      // ele.nextElementSibling  获取当前元素的一下个兄弟元素
+      var nb = bx.nextElementSibling
+      console.log(nb);
+      // ele.previousElementSibling  获取当前元素的上一个兄弟元素
+      var pb = bx.previousElementSibling
+      console.log(pb);
+    </script>
+  </body>
+</html>
