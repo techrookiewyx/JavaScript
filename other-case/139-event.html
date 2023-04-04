@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件绑定的三种方法</title>
+  </head>
+  <body>
+    <!-- 可以直接将响应函数在元素属性中设置 -->
+    <!-- <button id="btn"  onclick="alert('你点我干嘛')">点我一下</button> -->
+    <button id="btn">点我一下</button>
+     
+    <script>
+      //事件就是用户和页面发生的交互行为（点击按钮、鼠标移动、敲击键盘等）
+
+      //可以通过为元素的指定属性设置回调函数方式来绑定响应函数
+      var btn = document.getElementById("btn");
+      btn.onmouseenter=function(){
+        alert("我将鼠标移入了");
+      }
+      //也可以通过元素的addEventListener()方法来绑定事件
+      btn.addEventListener("click",function(){
+         alert('我是通过addEventListener绑定的事件');
+      })
+    </script>
+  </body>
+</html>
