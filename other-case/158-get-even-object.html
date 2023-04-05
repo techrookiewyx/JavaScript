@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件对象</title>
+    <style>
+      .box1 {
+        width: 300px;
+        height: 300px;
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>事件对象</h1>
+    <div class="box1"></div>
+
+    <script>
+      //事件对象由浏览器在事件触发时创建的对象，这个对象中封装了事件触发的各种信息
+      var box = document.querySelector(".box1");
+      //在事件的回调函数中定义一个参数来接收该对象
+      box.onmousemove = function (event) {
+        console.log(event);
+      };
+    </script>
+  </body>
+</html>
