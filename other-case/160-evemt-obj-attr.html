@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象事件属性</title>
+    <style>
+      #box1{
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+      }
+      .box2{
+        width: 100px;
+        height: 100px;
+        background-color:skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>对象事件属性</h1>
+    <div id="box1">
+      <div class="box2"></div>
+    </div>
+
+    <script>
+      //不同事件对应的事件对象也不同，但他们的原型都是Event对象
+      var box = document.getElementById("box1");
+      box.onclick = function (event) {
+        //  event.target 表示获取事件触发的对象
+          let res =event.target;
+          console.log(res);
+        // event.currentTarget 表示事件的绑定对象(同 this)
+          let res1 =event.currentTarget;
+          console.log(res1);
+        
+      }
+    </script>
+  </body>
+</html>
