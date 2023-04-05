@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取元素宽度</title>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+        border: 5px solid greenyellow;
+        background-color: pink;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>获取元素宽度</h1>
+    <div class="box1"></div>
+    <button id="btn" type="button">点我获取div样式</button>
+
+    <script>
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        const box1 = document.querySelector(".box1");
+        //获取ele元素的宽度（内部区域：包括内边距和内容区），返回值是数字可直接参与运算
+        console.log(box1.clientWidth);
+      };
+    </script>
+  </body>
+</html>
