@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定时器——clearTimeout</title>
+</head>
+<body>
+  <h1>定时器——clearTimeout</h1>
+
+  <script>
+    //可以通过clearTimeout（）来关闭定时器，需要传递一个参数（定时器标识）来指定要关闭哪个定时器
+    var timter1 = setTimeout(function() {
+        alert("我执行了")
+    }, 3000);
+    clearTimeout(timter1); //关闭定时器，timer1代码不会执行
+  </script>
+</body>
+</html>
