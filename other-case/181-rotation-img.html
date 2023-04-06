@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style-type: none;
+      }
+      .wapper {
+        position: relative;
+        width: 640px;
+        margin: 50px auto;
+      }
+      .wapper ul {
+        height: 390px;
+        position: relative;
+      }
+      .wapper ul li {
+        position: absolute;
+        opacity: 0;
+        transition: all 1s;
+      }
+      .wapper ul li a img {
+        width: 100%;
+        vertical-align: bottom;
+      }
+      ul li.current {
+        z-index: 1;
+        opacity: 1;
+      }
+      .wapper .p-n a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: -30px;
+        font-size: 60px;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        margin: auto;
+        font-weight: bold;
+        z-index: 5;
+      }
+      #next {
+        right: 0;
+      }
+      .dot {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 15px;
+        z-index: 5;
+      }
+      .wapper .dot a {
+        display: block;
+        width: 15px;
+        margin-left: 20px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 0.5;
+      }
+      .dot a:hover {
+        opacity: 1;
+      }
+      .wapper .dot .active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>轮播图</h1>
+    <section class="wapper">
+      <ul>
+        <li class="current">
+          <a href="javascript:;"><img src="images/1.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="javascript:;"><img src="images/2.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="javascript:;"><img src="images/3.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="javascript:;"><img src="images/4.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="javascript:;"><img src="images/5.png" alt="" /></a>
+        </li>
+      </ul>
+      <div class="p-n">
+        <a id="prev" href="javascript:;"><</a>
+        <a id="next" href="javascript:;">></a>
+      </div>
+      <div class="dot">
+        <a class="active" href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+      </div>
+    </section>
+
+    <script>
+      var prev = document.getElementById("prev");
+      var next = document.getElementById("next");
+      var liCont = document.getElementsByTagName("li");
+      var wapper = document.querySelector(".wapper");
+      var dots = document.querySelectorAll(".dot a");
+      function changeImg(dir) {
+        const current = document.querySelector("ul .current");
+        let next;
+        if (dir == "next") {
+          next = current.nextElementSibling || liCont[0];
+        }
+        if (dir == "prev") {
+          next = current.previousElementSibling || [...liCont].at(-1);
+        }
+        if (typeof dir == "number") {
+          next = liCont[dir];
+        }
+        //获取点击小点后要显示的图片的索引
+        const index = [...liCont].indexOf(next);
+
+        current.classList.remove("current");
+        next.classList.add("current");
+
+        //切换小点
+        const currentAc = document.querySelector(".active");
+        currentAc.classList.remove("active");
+        dots[index].classList.add("active");
+      }
+
+      var toggleChange = (function () {
+        //设置轮播图是否自动切换
+        let time = null;
+        return function () {
+          if (time == null) {
+            time = setTimeout(function auto() {
+              changeImg("next");
+              time = setTimeout(auto, 3000);
+            }, 3000);
+          } else {
+            clearTimeout(time);
+            time = null;
+          }
+        };
+      })();
+      toggleChange();
+      wapper.onmouseenter = function () {
+        toggleChange();
+      };
+      wapper.onmouseleave = function () {
+        toggleChange();
+      };
+      prev.onclick = function () {
+        changeImg("prev");
+      };
+      next.onclick = function () {
+        changeImg("next");
+      };
+      document.addEventListener("click", function (event) {
+        const index = [...dots].indexOf(event.target);
+        if (index != -1) {
+          changeImg(index);
+        }
+      });
+    </script>
+  </body>
+</html>
