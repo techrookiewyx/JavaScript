@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>练习-利用定时器实现图片自动切换</title>
+    <style>
+      .wapper {
+        width: 640px;
+        margin: 50px auto;
+        text-align: center;
+      }
+      .wapper img {
+        width: 100%;
+        vertical-align: bottom;
+      }
+      .wapper .imgs {
+        position: relative;
+      }
+      .wapper .btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wapper">
+      <p id="info">总共m张图片，当前是第n张</p>
+      <div class="imgs">
+        <img src="./images/1.png" alt="" />
+      </div>
+      <div class="btns">
+        <button id="prev">上一张</button>
+        <button id="auto">自动</button>
+        <button id="next">下一张</button>
+      </div>
+    </div>
+    <script>
+      //功能  点击按钮切换图片
+      var img = document.getElementsByTagName("img");
+      var btnPrev = document.getElementById("prev");
+      var btnNext = document.getElementById("next");
+      var auto = document.getElementById("auto");
+      var info = document.getElementById("info");
+      //创建一个存储图片路径的数组
+      var imgArr = ["./images/1.png", "./images/2.png", "./images/3.png", "./images/4.png", "./images/5.png"];
+      //创建一个变量记录当前图片的索引
+      var current = 0;
+      //计时器的标识
+      let timer;
+      btnPrev.addEventListener("click", function () {
+        clearTimeout(timer);
+        current--;
+        if (current < 0) {
+          current = imgArr.length - 1;
+        }
+        img[0].src = imgArr[current];
+        info.textContent = `总共${imgArr.length}张图片，当前是第${current + 1}张`;
+      });
+      btnNext.addEventListener("click", function () {
+        clearTimeout(timer);
+        current++;
+        if (current > imgArr.length - 1) {
+          current = 0;
+        }
+        img[0].src = imgArr[current];
+        info.textContent = `总共${imgArr.length}张图片，当前是第${current + 1}张`;
+      });
+
+      auto.onclick = function () {
+        //开启一个计时器之间清除之前生成的定时器（避免多个定时器存在影响性能）
+        clearTimeout(timer);
+        timer = setTimeout(function fn() {
+          current++;
+          if (current > imgArr.length - 1) {
+            current = 0;
+          }
+          img[0].src = imgArr[current];
+          info.textContent = `总共${imgArr.length}张图片，当前是第${current + 1}张`;
+          timer = setTimeout(fn, 2000);
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>
