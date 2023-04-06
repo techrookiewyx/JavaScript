@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定时器——clearInterval</title>
+</head>
+<body>
+  <h1>定时器——clearInterval</h1>
+  <h2>当下面的数到10停止</h2>
+  <h3 id="num"></h3>
+  <script>
+    //可以通过clearInterval（）来关闭定时器
+    var a=0;
+    var num = document.getElementById("num");
+    var timer1 = setInterval(function() {
+        a++;
+        num.textContent=a;
+        if(a==10){
+          clearInterval(timer1);
+        }
+    }, 1000);
+  </script>
+</body>
+</html>
