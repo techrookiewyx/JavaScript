@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>消息队列</title>
+  </head>
+  <body>
+    <h1>调用栈</h1>
+    <button id="btn" type="button">按钮1</button>
+    <button id="btn2" type="button">按钮2</button>
+    <script>
+      function fn() {
+        let a = 10;
+        let b = 20;
+        function fn2() {
+          console.log("fn2");
+        }
+        fn2(); 
+        console.log("fn");
+      }
+      fn();
+      //消息队列负责存储将要执行的函数
+      //当我们触发一个事件时，其响应函数不是直接就添加到调用栈中，因为调用栈中可能会存在一些还没有执行完的代码，此时响应函数被插入到消息队列中
+      var btn = document.getElementById("btn");
+      btn.onclick=function(){
+          alert("1");
+          let not =Date.now();
+          //当该循环执行时 调用栈被是占用的
+          while(Date.now()-not<5000){}
+      };
+      btn2.onclick=function(){
+          alert("2");
+      };
+    </script>
+  </body>
+</html>
