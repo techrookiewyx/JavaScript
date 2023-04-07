@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象-onresize事件</title>
+    <style>
+      div{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>window对象-onresize事件</h1>
+    <div></div>
+    <script>
+      var div = document.querySelector("div");
+      console.log(div);
+      window.addEventListener("resize",function(){
+         if(window.innerWidth<1000){
+          div.style.backgroundColor="red";
+         }else{
+          div.style.backgroundColor="pink";
+         }
+      })
+    </script>
+  </body>
+</html>
