@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutation Observer的实例方法</title>
+  </head>
+  <body>
+    <h1>Mutation Observer的实例方法-obverse()</h1>
+
+    <script>
+      //新创建的Mutation Observer实例不会与DOM关联起来，使用observe()方法来启动观察
+      let ob1 = new MutationObserver(()=>{
+         console.log("body的属性被修改了");
+      })
+      //该方法接收必要的两个参，数第一个参数是要观察的DOM节点，第二个参数是一个配置对象用于控制观察哪些方面的变化
+      ob1.observe(document.body,{
+        //这里表示观察body元素上任何属性变化都会被ob1发现，然后去异步执行ob1对象的回调函数
+         attributes: true
+      })
+      document.body.className="box";
+      console.log("修改body属性");
+    </script>
+  </body>
+</html>
