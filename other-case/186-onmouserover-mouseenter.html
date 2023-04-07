@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onmouseenter和onmouseover的区别</title>
+    <style>
+      .father{
+        margin-top: 30px;
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+      }
+      .son{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <script>
+      //mouseover鼠标经过绑定事件元素自身会触发，经过其子元素也会触发
+      //mouseenter只有当鼠标经过绑定事件元素自身会触发（子元素不会触发），它不具备事件冒泡特性
+      var father = document.querySelector(".father");
+      var son = document.querySelector(".son");
+      father.addEventListener("mouseover",function(){
+          console.log("aaa");
+      })
+      
+      father.addEventListener("mouseenter",function(){
+          console.log("bbb");
+      }) 
+    </script>
+  </body>
+</html>
