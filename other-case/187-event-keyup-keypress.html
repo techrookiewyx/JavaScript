@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onkeyup和onkeypress</title>
+  </head>
+  <body>
+    <h1>onkeyup和onkeypress</h1>
+    <script>
+      //onkeyup触发后，接下来触发keypress事件，
+      //onkeypress可以捕获单个字符的大小写,onkeyup不能判断单个字符的大小写
+      document.onkeyup=function(event){
+          console.log(`up:${event.keyCode}`);
+      }
+      document.onkeypress=function(event){
+          console.log(`press:${event.keyCode}`);
+      }
+    </script>
+  </body>
+</html>
