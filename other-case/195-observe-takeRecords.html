@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>observe-takerecords</title>
+  </head>
+  <body>
+    <h1>observe-takerecords</h1>
+    <script>
+      let ob1 = new MutationObserver((a) => {
+        console.log("a");
+      });
+      ob1.observe(document.body, {
+        attributes: true,
+      });
+      document.body.className="box";
+      document.body.className="box1";
+      document.body.className="box2";
+      console.log(ob1.takeRecords());
+      console.log(ob1.takeRecords());
+    </script>
+  </body>
+</html>
