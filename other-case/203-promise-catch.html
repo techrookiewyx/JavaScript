@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise实例方法-catch</title>
+  </head>
+  <body>
+    <h1>promise实例方法-catch</h1>
+
+    <script>
+      //catch()和then()用法类似
+      //但它只需要一个回调函数作为参数,catch()就是专门用来处理promise异常的方法
+      let promise = new Promise(function (resolve, reject) {   
+          // resolve("嘻嘻");
+          reject("123");
+      });
+      promise.catch(function(a){
+         console.log("aaa",a); //只有当异常时，才会调用该回调函数
+      })
+    </script>
+  </body>
+</html>
