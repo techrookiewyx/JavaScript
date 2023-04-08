@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise实例方法-finally</title>
+  </head>
+  <body>
+    <h1>promise实例方法-finally</h1>
+
+    <script>  
+      let promise = new Promise(function (resolve, reject) {   
+          // resolve("嘻嘻");
+          reject("123");
+      });
+      //finally()总会执行，它不会根据PromiseState来决定，其回调函数中不会接收到数据（不需要参数）。
+      promise.finally(function(){
+         console.log("无论是否出现异常我都会执行");
+      });
+    </script>
+  </body>
+</html>
