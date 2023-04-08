@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>回调函数实现异步</title>
+  </head>
+  <body>
+    <h1>回调函数实现异步</h1>
+    <script>
+      //异步的代码无法通过return来获取返回值
+      //我们可以通过回调函数获取 return的结果
+      console.log("111");
+      console.log("222");
+      
+      function sum (a,b,cb){
+         setTimeout(function(){
+            cb(a+b);
+         },5000)
+      }
+      var res =sum(2,3,result=>{
+         console.log(result); //输出5
+      });
+      console.log("333"); //该行代码不会发生阻塞
+    </script>
+  </body>
+</html>
