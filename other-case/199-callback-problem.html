@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>异步回调嵌套问题</title>
+  </head>
+  <body>
+    <h1>异步回调嵌套问题</h1>
+
+    <script>
+      function sum(a, b, cb) {
+        setTimeout(function () {
+          cb(a + b);
+        }, 5000);
+      }
+      //如果另一个异步调用需要使用到前一次异步调用的结果时
+      //依次类推如果有多个这样的需要依赖到前一次调用结果时，就会发生回调函数中嵌套回调函数
+      //这使得代码的可读性、调试性很差
+      sum(2, 3, (result) => {
+        sum(result, 4, (result) => {
+          sum(result, 5, (result) => {
+            sum(result, 6, (result) => {
+              sum(result, 4, (result) => {
+                console.log(result);
+              });
+            });
+          });
+        });
+      });
+      console.log("333"); //该行代码不会发生阻塞
+    </script>
+  </body>
+</html>
