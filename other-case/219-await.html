@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await</title>
+  </head>
+  <body>
+    <h1>await</h1>
+    <script>
+      //await可以以同步的方式去调用异步的代码 ,await只能用于async声明的异步函数中
+      //当通过await去调用异步函数时，它会暂停代码的运行，直到异步代码有执行结果时，将结果返回
+
+      function sum(a, b) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                resolve(a+b);
+            },3000)
+        })
+      }
+      async function fn3() {
+        let res = await sum(2,3);
+        res = await sum(res,6);
+        console.log(res);
+        console.log(111);
+        console.log(222);
+        console.log(333);
+      }
+      fn3();
+      console.log("aaa");
+      console.log("bbb");
+    </script>
+  </body>
+</html>
