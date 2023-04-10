@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>微任务队列</title>
+  </head>
+  <body>
+    <h1>微任务队列</h1>
+
+    <script>
+      //在JS中消息队列分为两种：宏任务队列和微任务队列
+      //微任务队列的执行优先级比宏任务队列高
+      
+      setTimeout(function(){
+         console.log("111");
+      },0);
+      //先输出222 在输出111
+      //promise的三种实例方法的回调函数 在执行时会插入到微任务队列
+      Promise.resolve().then(function(){
+        console.log("2222"); 
+      })
+    </script>
+  </body>
+</html>
