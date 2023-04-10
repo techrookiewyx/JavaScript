@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise静态方法-any</title>
+  </head>
+  <body>
+    <h1>promise静态方法-any</h1>
+    <script>
+      function sum(a, b) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve(a + b);
+          }, 1000);
+        });
+      }
+      //返回多个promise中执行最快的完成的Promise，它的参数需要传递一个可迭代对象
+      Promise.any([
+        sum(2,3),
+        sum(5,8),
+        Promise.reject("a"),
+        sum(15,29)
+      ]).then(function(res){
+          console.log(res);
+      });
+    </script>
+  </body>
+</html>
