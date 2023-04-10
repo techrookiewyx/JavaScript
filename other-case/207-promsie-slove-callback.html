@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise解决回调嵌套</title>
+</head>
+<body>
+  <h1>promise解决回调嵌套</h1>
+
+  <script>
+      function sum (a,b){
+         return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve(a+b);
+            },1000)
+         })
+       }
+       sum(2,5)
+       //第二个then的result就是第一个then返回的结果
+       .then(function(reslut){return reslut+7})
+       .then(function(result){return result+8})
+       .then(function(result){console.log(result);})
+  </script>
+</body>
+</html>
