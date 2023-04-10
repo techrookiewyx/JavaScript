@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise用法</title>
+  </head>
+  <body>
+    <h1>promise用法</h1>
+
+    <script>
+      //该函数返回一个promise对象
+       function sum (a,b){
+         return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve(a+b);
+            },1000)
+         })
+       }
+       sum(2,5).then(function(reslut){
+            console.log(reslut);
+       })
+
+       
+    </script>
+  </body>
+</html>
