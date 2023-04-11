@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖</title>
+    <style>
+      .b1 {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>防抖</h1>
+    <div class="b1"></div>
+
+    <script>
+      //防抖指当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时
+
+      //案例 鼠标在盒子上移动，鼠标停止2s后,里面的数字+1
+      let box = document.querySelector(".b1");
+      let i = 0;
+      function mousemove() {
+        box.textContent = ++i;
+      }
+      function debonce(fn,t){
+        let time; 
+         return function (){
+            if(time) clearTimeout(time);
+            time = setTimeout(fn,t)
+         }
+      }
+      box.addEventListener("mousemove", debonce(mousemove,1000));
+    </script>
+  </body>
+</html>
