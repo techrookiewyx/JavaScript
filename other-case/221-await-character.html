@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await特点</title>
+  </head>
+  <body>
+    <h1>await特点</h1>
+
+
+    <script>
+      //await 不仅仅只能在异步代码之前加，只要是在异步函数中，同步代码也可以使用await
+      
+      async function fn(){
+            console.log(1);
+            await console.log(2); //该语句执行完毕，其后边所有代码（在异步函数内部的）都被添加到微任务队列中
+            console.log(3);
+      }
+      // 输出结果为 1 2 4 3 
+      // 当语句或函数前加上await后，当前语句或函数后边的所有代码，会在当前语句或函数执行完毕后，被添加到微任务队列
+      fn();
+      console.log(4);
+    </script>
+  </body>
+</html>
