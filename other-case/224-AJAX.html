@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX-xhr</title>
+  </head>
+  <body>
+    <button id="btn">点我获取数据</button>
+    <script>
+      //  AJAX就是一个通过js来向服务器发送异步请求来加载数据的技术 
+      //  XMLHTTPRequset时AJAX发送请求的一种方法
+      const btn = document.getElementById("btn");
+      const xhr = new XMLHttpRequest();
+      console.log(xhr.readyState);
+      btn.onclick=function(){
+        //在JS中有一个类XMLHTTPRequset，该类表示请求对象
+      
+         // 设置请求信息 第一个参数表示请求方式，第二个参数表示请求路径  相当于请求首行
+         xhr.open("GET","http://localhost:3000");
+         // 发送请求
+         console.log(xhr.readyState);
+         xhr.send();
+      }
+    </script>
+  </body>
+</html>
