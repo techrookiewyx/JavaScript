@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本地存储属性-length</title>
+  </head>
+  <body>
+    <h1>本地存储属性-length</h1>
+    <button id="btn" type="button">存储数据</button>
+    <div></div>
+    <script>
+       // length属性用于获取存储在本地的数据的个数
+       var btn = document.getElementById("btn");
+       btn.onclick= function(){
+           localStorage.name="skw";
+           localStorage.age="16";
+           localStorage.sex="男";
+           var box = document.getElementsByTagName("div")[0];
+           box.innerText=localStorage.length;
+       }
+    </script>
+  </body>
+</html>
