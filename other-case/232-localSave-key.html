@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本地存储方法-keyItem</title>
+  </head>
+  <body>
+    <h1>本地存储方法-keyItem</h1>
+    <button id="btn" type="button">存储数据</button>
+    <button id="btn2" type="button">遍历数据</button>
+    <div></div>
+    <script>
+       var btn = document.getElementById("btn");
+       var btn2 = document.getElementById("btn2");
+       btn.onclick= function(){
+           localStorage.name="skw";
+           localStorage.age="16";
+           localStorage.sex="男";
+       }
+       btn2.onclick= function(){
+          //接受一个整数作为参数（从零开始），返回该位置对应的键值
+          for (let i = 0; i < localStorage.length; i++) {
+                console.log(localStorage.key(i),localStorage.getItem(localStorage.key(i)));
+          }
+       }
+    </script>
+  </body>
+</html>
