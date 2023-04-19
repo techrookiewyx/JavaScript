@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>请求终止控制器</title>
+  </head>
+  <body>
+    <button id="btn">发送请求</button>
+    <button id="btn2">终止请求</button>
+    <script>
+       const btn = document.getElementById("btn");
+       const btn2 = document.getElementById("btn2");
+       let abtController;
+       btn.onclick=function(){
+        //创建AbortController控制器的实例对象
+         abtController = new AbortController();
+          fetch("http://localhost:3000/test",{
+             // 配置abtController.signal为fetch信号，当控制器发送终止请求信号，就会终止请求发送
+              signal: abtController.signal,
+          }).then((res)=>{
+
+          }).catch((err)=>{
+
+          })
+       }
+       btn2.onclick=function(){
+          abtController && abtController.abort();
+       }
+    </script>
+  </body>
+</html>
