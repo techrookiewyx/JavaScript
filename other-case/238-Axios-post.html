@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axios发送post请求</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <button type="button" id="btn">按钮</button>
+    <script>
+      //通过 post()方法发送 AJAX请求
+      document.getElementById("btn").onclick = function () {
+          axios.post("http://localhost:7788/api/login/account",{
+             username: "admin",
+             password: "888888"
+          }).then(function(res){
+            console.log(res.data);
+          }).catch(function(err){
+            console.log(err);
+          })
+      };
+    </script>
+  </body>
+</html>
