@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>指定Axios全局默认配置参数</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button type="button" id="btn">按钮</button>
+    <script>
+      //通过 default 指定aioxs默认默认
+      axios.default.baseURL ="http://localhost:7788";
+      // 配置默认请求头信息 common代表所有请求类型 也可以指定类型
+      axios.default.headers.common["Content-type"]="application/json";
+      //通过 axios()方法发送AJAX请求 需要配置对象作为参数 
+      document.getElementById("btn").onclick = function(){
+          axios({
+            method: "post",  //配置请求方法 不写默认get
+            url: "api/login/account", //配置请求路径 必写
+            data:{          //请求体（发送的数据）
+              username: "admin1",
+              password: "888888"
+            },
+          }).then(function(res){
+            //res是axios封装过的 包含一些其他信息
+            console.log(res.data);
+          }).catch(function(err){
+            console.log(err);
+          })
+      }
+    </script>
+</body>
+</html>
