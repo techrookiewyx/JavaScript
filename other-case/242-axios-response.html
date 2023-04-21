@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios响应结构</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button type="button" id="btn">按钮</button>
+    <script>
+      document.getElementById("btn").onclick = function(){
+          axios({
+            method: "post",  
+            url: "http://localhost:7788/api/login/account", 
+            data:{       
+              username: "admin",
+              password: "888888"
+            },
+          }).then(function(res){
+            //与发送请求相同  服务器端也会有对应响应数据的配置
+            //可以通过对应的配置属性来获取
+            console.log(res.data);
+            console.log(res.status);
+            console.log(res.headers);
+            console.log(res.config);
+            console.log(res);
+          }).catch(function(err){
+            console.log(err);
+          })
+      }
+    </script>
+</body>
+</html>
