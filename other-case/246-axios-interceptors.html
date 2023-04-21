@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axios响应拦截器</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <button type="button" id="btn">按钮</button>
+    <script>
+      // 响应拦截器 通过 axios.interceptors.response.use()设置
+      axios.interceptors.response.use(
+        function (response) {
+          // 在接收对响应前 只有在响应状态码为2xx时触发
+          response.data="aaaaa";
+          return response;
+        },
+        function (error) {
+          // 对响应错误做些什么
+          return Promise.reject(error);
+        }
+      );
+      document.getElementById("btn").onclick = function () {
+        axios({
+          method: "get",
+          url: "http://localhost:7788/repos/hello",
+        })
+          .then(function (res) {
+            console.log(res.data);
+          })
+          .catch(function (err) {
+            console.log("粗错了", err);
+          });
+      };
+    </script>
+  </body>
+</html>
