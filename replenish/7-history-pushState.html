@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>histroy对象的方法-pushState</title>
+</head>
+<body>
+   <script>
+     //该方法用于在历史中添加一条记录 
+     var obj = {name:"skw"};
+     //新页面地址，必须与当前页面处在同一个域  
+     //该方法不会触发页面刷新，只是导致 History 对象发生变化，地址栏会有反应
+     history.pushState(obj,"222","2.html")
+
+   
+   </script>
+</body>
+</html>
