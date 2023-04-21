@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios特点</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button type="button" id="btn">按钮</button>
+    <script>
+      document.getElementById("btn").onclick = function(){
+          axios({
+            method: "get",  
+            url: "http://localhost:3000",        
+          }).then(function(res){
+            console.log(res.data);
+            //axios不想fetch 若服务器返回响应码不是2xx 就会触发catch
+          }).catch(function(err){
+            console.log("粗错了",err);
+          })
+      }
+    </script>
+</body>
+</html>
