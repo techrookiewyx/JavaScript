@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL的编码-encodeURI</title>
+  </head>
+  <body>
+    <script>
+      //encodeURI方法用于对URL进行编码，其参数为字符串（代表URL），会将元字符和语义字符以外的字符进行编码（转义）
+      // var url =encodeURI('http://www.example.com/q=春节')
+      // location.replace(url);
+      console.log(encodeURI('http://www.example.com/q=春节'));
+    </script>
+  </body>
+</html>
