@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>url实例化对象</title>
+  </head>
+  <body>
+    <script>
+      //URL对象用来构造、解析和编码 URL，可以通过URL来实例化一个对象，它可以接收一个表示URL的字符串作为参数
+      var url = new URL("http://www.example.com/index.html");
+      console.log(url.href);
+      // 也可以给其传递第二个参数，这时第一个参数表示相对路径，第二个参数表示绝对路径
+      var url1 = new URL("index.html", "http://example.com");
+      console.log(url1.href);  
+      var url2 = new URL("page2.html", "http://example.com/page1.html");
+      //输出结果的路径是在第二个参数的基础上，切换到第一个参数得到的
+      console.log(url2.href);
+      // ..表示上级目录
+      var url3 = new URL('..', 'http://example.com/a/c/b.html')
+      console.log(url3.href); //http://example.com/a/
+      var url4 = new URL('..', 'http://example.com/a/b.html')
+      console.log(url4.href); //http://example.com/
+    </script>
+  </body>
+</html>
