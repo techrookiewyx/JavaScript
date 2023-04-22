@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL的解码-decodeURIComponent</title>
+  </head>
+  <body>
+    <script>
+      //该方法通常用于对URL片段进行解码，该方法相当于encodeURIComponent方法的逆运算，其参数一般是编码的URL片段
+      var url = 'http%3A%2F%2Fwww.example.com%2Fq%3D%E6%98%A5%E8%8A%82';
+      var res1 = decodeURIComponent(url);
+      //decodeURI无法对url元字符进行解码
+      var res2 = decodeURI(url);
+      console.log(res1);
+      console.log(res2);
+    </script>
+  </body>
+</html>
