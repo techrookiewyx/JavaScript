@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URLSearchParams</title>
+</head>
+<body>
+  <script>
+    //URLSearchParams对象是浏览器的原生对象，用来构造、解析和处理 URL 的查询字符串
+    var params = new URLSearchParams("foo=1&bar=2"); 
+    console.log(params.toString()); //foo=1&bar=2
+    //可以传入数组
+    var params2 = new URLSearchParams([["foo",3],["bar",4]]);
+    console.log(params2.toString()); //foo=3&bar=4
+    //也可以传入对象
+    var params3 = new URLSearchParams({"foo":5});
+    console.log(params3.toString());
+  </script>
+</body>
+</html>
