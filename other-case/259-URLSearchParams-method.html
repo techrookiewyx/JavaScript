@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams方法-append</title>
+  </head>
+  <body>
+    <script>
+      //append(key,value) 方法用来追加查询参数，无返回值
+      var params = new URLSearchParams({"foo":1,"bar":2});
+      params.append("name","tom");
+      console.log(params.toString());//foo=1&bar=2&name=tom
+      //该方法不会检查键名是否存在
+      var params2 = new URLSearchParams({"foo":1,"bar":2});
+      params2.append("foo",2);
+      console.log(params2.toString()); //foo=1&bar=2&foo=2
+    </script>
+  </body>
+</html>
