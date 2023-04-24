@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams方法-sort</title>
+  </head>
+  <body>
+    <script>
+      //sort()方法方法对查询字符串里面的键名进行排序，按照 Unicode 码点从小到大排列
+      //该方法无返回值
+      var params = new URLSearchParams('c=4&ab=2&b=3&aa=1');
+      params.sort();
+      console.log(params.toString());
+      </script>
+  </body>
+</html>
