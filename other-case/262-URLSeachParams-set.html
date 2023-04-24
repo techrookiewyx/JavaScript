@@ -10,6 +10,7 @@
     <script>
       //set(key,value)方法用来设置查询字符串键值
       //若键名以存在则修改值，若键名不存在则会追加到对象中
+      
       var params = new URLSearchParams({"foo":1,"bar":2});
       params.set("foo",2);
       console.log(params.toString());
