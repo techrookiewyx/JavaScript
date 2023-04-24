@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams实例对象的遍历</title>
+  </head>
+  <body>
+    <script>
+      //可以使用for-of来遍历URLSearchParams实例对象
+      var params = new URLSearchParams({"foo":1,"bar":2,"name":"张三"});
+      for (res of params){
+        console.log(res[0],":",res[1]);
+      }
+    </script>
+  </body>
+</html>
