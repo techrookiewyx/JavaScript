@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams的三种遍历方法</title>
+  </head>
+  <body>
+    <script>
+      //keys()、values()、entries()三个方法都用来遍历，都会返回一个遍历器对象
+      //keys用来遍历键名
+      var params = new URLSearchParams('a=1&a=2');
+      for (var key of params.keys()){
+        console.log(key);
+      }
+      //values用来遍历值
+      for(var value of params.values()){
+        console.log(value);
+      }
+      //entries用来遍历键值对
+      for (var kv of params.entries()){
+        console.log(kv);
+      }
+    </script>
+  </body>
+</html>
