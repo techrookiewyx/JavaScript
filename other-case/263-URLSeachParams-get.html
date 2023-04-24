@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams方法-get</title>
+  </head>
+  <body>
+    <script>
+      //get(key)方法用来获取指定键名的键值
+      //该方法返回字符串，若键值是数字需要类型转换，若指定键名不存在返回null
+      var params = new URLSearchParams({"foo":1,"bar":2,"foo":3});
+      console.log(params.get("bar"));
+      console.log(params.get("foa"));
+      //若存在同名的键，返回最前边的键名对应值
+      console.log(params.get("foo"));
+      </script>
+  </body>
+</html>
