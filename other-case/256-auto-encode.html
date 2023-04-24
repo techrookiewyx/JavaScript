@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams的自动编码</title>
+  </head>
+  <body>
+    <script>
+      //URLSearchParams会对查询字符串的非合法字符进行自动编码
+      var params = new URLSearchParams({"name":"张三","sex":"男"});
+      console.log(params.toString()); // name=%E5%BC%A0%E4%B8%89&sex=%E7%94%B7
+    </script>
+  </body>
+</html>
