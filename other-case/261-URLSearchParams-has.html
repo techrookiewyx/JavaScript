@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLSearchParams方法-delete</title>
+  </head>
+  <body>
+    <script>
+      //has(key)方法查询一个查询字符串中是否包含指定键名，返回一个布尔值
+      var params = new URLSearchParams({"foo":1,"bar":2,"name":"tom"});
+      console.log(params.has("ab"));
+      console.log(params.has("foa"));
+      console.log(params.has("foo"));
+      </script>
+  </body>
+</html>
