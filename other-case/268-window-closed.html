@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的属性-colosed</title>
+  </head>
+  <body>
+    <script>
+      //window.closed  只读，表示引用窗口是否关闭，返回布尔值
+      popup= window.open("http://www.baidu.com");
+      if((popup!==null) && !popup.closed){
+         console.log("新窗口未关闭");
+      }else{
+        console.log("bbb");
+      }
+    </script>
+  </body>
+</html>
