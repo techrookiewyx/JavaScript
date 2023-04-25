@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的属性-scrollX和scrollY</title>
+    <style>
+      body{
+        width: 2300px;
+        height: 1500px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //window.scrollX和window.scrollY   返回页面水平/垂直滚动距离，返回值单位为css像素，只读
+      console.log(window.scrollX);
+      console.log(window.scrollY);
+       //pageXOffset属性是scrollX的别名,进行相等或全等比较总是返回ture
+      console.log(window.scrollX===window.pageXOffset);
+    </script>
+  </body>
+</html>
