@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的方法-prompt</title>
+  </head>
+  <body>
+    <script>
+      //window.prompt()弹出对话框，提示用户输入信息，并有确定和取消按钮
+      //该方法接收两个参数，一个是要显示给用户的文本，另一个数输入框的默认值
+      var res = window.prompt("请输入年龄",25);
+      if(res!==null){
+        //点击确定返回输入框中的值（字符串），点击取消或关闭对话框返回null
+        console.log("类型:",typeof res , res);
+      }
+      </script>
+  </body>
+</html>
