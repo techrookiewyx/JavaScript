@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window对象的方法-resizeTo</title>
+</head>
+<body>
+   <script>
+       var newWindow = window.open(
+        "https://baidu.com",
+        "wroxWindow",
+        "height=400,width=400,top=50,location=no,resizeable=yes"
+      )
+      //window.resizeTo() 方法用于调增浏览器窗口大小，接收两个参数分别代表新窗口的宽度和高度
+      newWindow.resizeTo(200,200);
+   </script>
+</body>
+</html>
