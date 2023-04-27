@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的方法-scrollTo</title>
+    <style>
+      body{
+        width: 2000px;
+        height: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" onclick="scrollWindow()" value="滚动条">
+    <script>
+      // scrollTo方法用于页面滚动,接收表示相对于视口距离的x和y坐标,表示要滚动到的坐标
+      // function scrollWindow() {
+      //   window.scrollTo(0, 500);
+      //   console.log(window.scrollX);
+      //   console.log(window.scrollY);
+      // }
+      function scrollWindow() {
+        //可以传递一个配置对象作为参数
+        window.scrollTo({
+           top: 500,
+           left: 0,
+           behavior:"smooth"  //表示滚动方式
+        });
+      }
+    </script>
+  </body>
+</html>
