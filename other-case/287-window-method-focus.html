@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的方法-focus</title>
+  </head>
+  <body>
+    <script>
+     var newWindow = window.open(
+        "https://baidu.com",
+        "wroxWindow",
+        "height=400,width=400,top=50,location=no,resizeable=yes"
+      )
+       //window.focus()方法会激活窗口，使其获得焦点，出现在其他窗口的前面
+      newWindow.focus();
+      </script>
+  </body>
+</html>
