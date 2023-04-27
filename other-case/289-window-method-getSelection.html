@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象的方法-getSelection</title>
+  </head>
+  <body>
+    <p>哈哈哈合适的</p>
+    <button type="button" id="btn">选中文本后点击</button>
+    <script>
+      document.getElementById("btn").onclick=function(){
+        var sel = window.getSelection();
+        console.log(sel.toString());
+      }
+    </script>
+  </body>
+</html>
