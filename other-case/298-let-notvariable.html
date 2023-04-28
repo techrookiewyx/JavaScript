@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let在for循环中使用特点</title>
+  </head>
+  <body>
+    <script>
+      //let声明的变量不存在变量提升现象
+      console.log(abc); //输出undefined
+      var abc = 1; 
+      console.log(sas); //报错
+      let sas = 2;
+    </script>
+  </body>
+</html>
