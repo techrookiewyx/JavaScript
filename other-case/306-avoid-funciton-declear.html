@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6的块级作用域-函数</title>
+  </head>
+  <body>
+    <script>
+      //块级作用域中应尽量避免函数声明
+      {
+        let a ="aaa"
+        function f(){
+          return a;
+        }
+        console.log(f());
+      }
+      //优先使用函数表达式
+      {
+        let a = "bbb";
+        let f = function fn(){
+          return a;
+        }
+        console.log(f());
+      }
+    </script>
+  </body>
+</html>
