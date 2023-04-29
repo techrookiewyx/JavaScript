@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>一些隐藏的暂时性死锁</title>
+  </head>
+  <body>
+    <script>
+      function test(x=y,y=2){ //声明一个变量x其默认值为y，此时y还未声明，属于死锁
+        return [x,y];
+      }
+      test(); //报错
+
+      function test2(x=2,y=x){ //这样就是正确的，因为x已经声明并且赋值了
+         return [x,y];
+      }
+      test2(); // [2,2]
+
+      var a =a ; //不报错
+      let b= b; //报错 同样属性暂时性死锁 变量声明还没有完成，就区取b
+    </script>
+  </body>
+</html>
