@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6块级作用域-函数声明</title>
+  </head>
+  <body>
+    <script>
+      function f() {
+        console.log("I am outside!");
+      };
+      (function () {
+        //浏览器实际运行代码 
+        //var f = undefined;
+        if (false) {
+          // 重复声明一次函数f
+          function f() {
+            console.log("I am inside!");
+          }
+        }
+        f(); //报错 因为浏览器有自己的ES6环境行为方式
+      })();
+    </script>
+  </body>
+</html>
