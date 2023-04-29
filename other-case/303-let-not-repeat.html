@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let不能重复重复声明变量</title>
+  </head>
+  <body>
+    <script>
+      //使用let声明变量时，在一个作用域中，只能声明一次
+      function fn(){
+        var a = 5;
+      //  let a = 10; //报错 显示变量a已经声明
+      }
+      function fn2(){
+        let a = 2; // fn2中声明的a与fn中声明的a无关
+        //let a = 5; //同样会报错
+      }
+      //同样不能函数内部重新声明参数
+      function fn3(age){
+          let age =5; //报错
+      }
+      function fn4(age){
+        {
+          let age = 6; //不报错 在函数内部创建子作用域
+        }
+      }
+    </script>
+  </body>
+</html>
