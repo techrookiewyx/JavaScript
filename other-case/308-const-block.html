@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>const的特点</title>
+  </head>
+  <body>
+    <script>
+      //const声明的常量同样只能在声明块中使用
+      if(true){
+        const AGE=15;
+      }
+      // console.log(AGE);
+      //const声明的常量也不会提升，同样存在暂时性死锁
+      if(true){
+        console.log(MAX);
+        const MAX=5;
+      }
+    </script>
+  </body>
+</html>
