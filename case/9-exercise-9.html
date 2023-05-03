@@ -9,4 +9,37 @@
   <body>
     <h1>获取 URL 中的参数</h1>
   </body>
+  <script>
+    //方法1
+    function fn(url) {
+      let newURL = new URL(url);
+      let obj ={};
+        if(newURL.search.length>0){
+        let qs = newURL.search.slice(1);
+        for(let item of qs.split("&").map(function(ele){return ele.split("=")})){
+            let name = decodeURIComponent(item[0]);
+            let value = decodeURIComponent(item[1]);
+            obj[name]=value;     
+        }
+        return obj;
+      }else{
+        console.log("无参数");
+      }
+    }
+    console.log(fn("http://baidu.com?name=张三&age=18"));
+
+    //方法2
+    function fn2(url){
+       let newUrl = new URL(url); 
+       let params = new URLSearchParams(newUrl.search);
+       let obj={}
+       for(let item of params){
+          let name = item[0];
+          let value = item[1];
+          obj[name]=value;
+       }
+       return obj;
+    }
+    console.log(fn2("http://baidu.com?name=张三&age=18"));
+  </script>
 </html>
