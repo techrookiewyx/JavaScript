@@ -10,4 +10,12 @@
     <h1>将其所有属性名称转换为小写字母</h1>
     <p>var arr = { Name: 'John', Age: 32, Country: 'USA'}</p>
   </body>
+  <script>
+    var arr = { Name: 'John', Age: 32, Country: 'USA'};
+    for(let item in arr){
+        arr[item.toLowerCase()]=arr[item];
+        delete arr[item]; 
+    }
+    console.log(arr);
+  </script>
 </html>
