@@ -9,10 +9,12 @@
   <body>
     <h1>将数组中的元素按字符串长度进行排序</h1>
     <p>var arr = ['apple', 'banana', 'cherry', 'date', 'fig']</p>
+    <pre></pre>
   </body>
   <script>
     var arr = ['apple', 'banana', 'cherry', 'date', 'fig'];
     const res = arr.sort(function(a,b){return a.length-b.length;});
     console.log(res);
+    document.querySelector("pre").innerHTML=`从少到多排序结果为：[${res}]`;
   </script>
 </html>
