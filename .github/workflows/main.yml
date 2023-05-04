@@ -18,7 +18,7 @@ jobs:
       # - run: npm run build
       # - run: npm run doc
       - run: |
-          mkdir build
+          mkdir output
           cp -rp case/*.html ./output
 
       # - name: Generate Contributors Images
