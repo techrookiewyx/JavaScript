@@ -8,6 +8,8 @@
   </head>
   <body>
     <h1>将字符串中的单词首字母转换为大写字母</h1>
+    <p>转换前：abc hello wordl</p>
+    <pre></pre>
     <script>
       //方法1
       function fn(str){
@@ -20,7 +22,7 @@
       }
       var res = fn("abc hello wordl");
       console.log(res);
-
+      document.querySelector("pre").innerHTML="转换后：" +res;
       //方法2
       function fn2(str){
          return str.trim().replaceAll(/( |^)[a-z]/g,function(e){
