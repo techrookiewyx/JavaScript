@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>练习1</title>
+  </head>
+  <body>
+    <h1>将字符串中的单词首字母转换为大写字母</h1>
+    <p>转换前：abc hello wordl</p>
+    <pre></pre>
+    <script>
+      //方法1
+      function fn(str){
+        let arr = str.trim().split(" ");
+        let newArr = [];
+        for(let i =0;i<arr.length;i++){
+          newArr.push(arr[i][0].toUpperCase()+arr[i].slice(1));
+        }
+        return newArr.join(" ");
+      }
+      var res = fn("abc hello wordl");
+      console.log(res);
+      document.querySelector("pre").innerHTML="转换后：" +res;
+      //方法2
+      function fn2(str){
+         return str.trim().replaceAll(/( |^)[a-z]/g,function(e){
+             return e.toUpperCase();
+        })
+      }
+      var res2 =fn2("tyt agav asd");
+      console.log(res2);
+    </script>
+  </body>
+</html>
