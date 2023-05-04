@@ -9,6 +9,7 @@
   <body>
     <h1>将其所有属性名称转换为小写字母</h1>
     <p>var arr = { Name: 'John', Age: 32, Country: 'USA'}</p>
+    <pre></pre>
   </body>
   <script>
     var arr = { Name: 'John', Age: 32, Country: 'USA'};
@@ -17,5 +18,6 @@
         delete arr[item]; 
     }
     console.log(arr);
+    document.querySelector("pre").innerHTML=`转换后:${JSON.stringify(arr)}`;
   </script>
 </html>
