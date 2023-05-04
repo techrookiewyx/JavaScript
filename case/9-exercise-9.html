@@ -8,6 +8,8 @@
   </head>
   <body>
     <h1>获取 URL 中的参数</h1>
+    <p>假设当前url为：http://baidu.com?name=张三&age=18</p>
+    <pre></pre>
   </body>
   <script>
     //方法1
@@ -40,6 +42,7 @@
        }
        return obj;
     }
-    console.log(fn2("http://baidu.com?name=张三&age=18"));
+    var res = fn2("http://baidu.com?name=张三&age=18");
+    document.querySelector("pre").innerHTML=`url参数为:${JSON.stringify(res)}`;
   </script>
 </html>
