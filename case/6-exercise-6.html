@@ -9,6 +9,7 @@
   <body>
     <h1>计算给定字符串中出现次数最多的字符以及出现次数</h1>
     <p>var str = 'this is a test string'</p>
+    <pre></pre>
   </body>
   <script>
     var str = "this is a test string";
@@ -41,5 +42,6 @@
     }
     let res = max(str);
     console.log(`最多次数为${res[1]},字符是${res[0]}`);
+    document.querySelector("pre").innerHTML=`字符串中出现次数最多的字符是：${res[0]} 出现次数是：${res[1]}`;
   </script>
 </html>
