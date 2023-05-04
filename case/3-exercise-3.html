@@ -9,9 +9,10 @@
   <body>
     <h1>求数组所有元素之和</h1>
     <p>var demo = ['a','b', 'b', 1,3,6,1,7]</p>
+    <pre></pre>
     <script>
       //方法1
-      var demo = ['12','b', 'b', 1,3,6,1,7];
+      var demo = ['a','b', 'b', 1,3,6,1,7];
       function fn1(arr) {
         let num=0;
         for(item of arr){
@@ -24,7 +25,8 @@
         }
         return num;
       }
-      console.log(fn1(demo));
+      var res =fn1(demo);
+      document.querySelector("pre").innerHTML="和为：" +res;
       //方法2
       function fn(arr){
        return  arr.reduce(function(a,b){ 
