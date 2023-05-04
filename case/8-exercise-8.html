@@ -8,8 +8,10 @@
   </head>
   <body>
     <h1>判断一个整数是否为质数</h1>
+    <pre></pre>
   </body>
   <script>
+    var n = prompt("请输入一个整数");
     function fn(number) {
       if (!isNaN(number)&&number>0&&number%1==0) {
         let falg = true;
@@ -20,14 +22,15 @@
           }
         }
         if (falg) {
-          console.log(`${number}是质数`);
+          return `${number}是质数`;
         } else {
-          console.log(`${number}不是质数`);
+         return `${number}不是质数`;
         }
       }else{
-        console.log("数字不合法");
+        return "输入不合法";
       }
     }
-    fn(6);
+    var res = fn(n);
+    document.querySelector("pre").innerHTML=res;
   </script>
 </html>
