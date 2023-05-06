@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>箭头函数</title>
+  </head>
+  <body>
+    <script>
+      //es6允许使用=>来定义函数
+      //当箭头函数中只有一句并且该语句时一个表达式时，该语句会作为箭头函数的返回值
+      var f = ()=> console.log("aaa"); //不需要使用return
+      f();
+      //当箭头函数有多条语句时需要用大括号包裹，且返回值需要使用return
+      var f2 = ()=>{
+        let a=10;
+        return a;
+      }
+      console.log(f2());
+    </script>
+  </body>
+</html>
