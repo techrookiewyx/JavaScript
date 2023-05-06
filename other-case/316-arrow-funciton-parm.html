@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>箭头函数的参数</title>
+  </head>
+  <body>
+    <script>
+      //当一个箭头函数没有参数或有多个参数时要使用小括号
+      var f = () => console.log("无参情况");
+      var f1 = (a,b) => a+b;
+      console.log(f1(2,3));
+
+      //当箭头函数只有一个参数时可以不加小括号
+      var f2 = c =>{
+         const q = 12;
+         return q+c
+      }
+      console.log(f2(1));
+    </script>
+  </body>
+</html>
