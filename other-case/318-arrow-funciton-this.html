@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>箭头函数的特点-this</title>
+  </head>
+  <body>
+    <script>
+      //箭头函数没有自己的this指向,且箭头函数的this无法改变
+      const fn = () =>{
+        console.log(this);  //window
+      }
+      fn();
+      const fn2 = function(){
+          console.log(this);//window
+      }
+      fn2();
+      //箭头函数的this有它的外层作用域决定
+      const obj ={
+        hello:()=>{
+          console.log(this);  //window
+        }
+      }
+      obj.hello();
+
+      const obj2 = {
+        hello2: function(){
+          console.log(this); //obj2
+        }
+      }
+      obj2.hello2();
+      //这时可以看到test的this由name来决定，name是通过对象的方法调用的所以，this指向obj3
+      const obj3 = {
+        name:function(){
+          const test =()=>{
+            console.log(this);  //obj3
+          }
+          test();
+        }
+      }
+      obj3.name();
+    </script>
+  </body>
+</html>
