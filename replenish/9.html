@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>尾递归</title>
+  </head>
+  <body>
+    <h1>尾递归</h1>
+    <p>函数尾调用自身，就称为尾递归</p>
+    <p>尾递归容易造成栈溢出，对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“栈溢出”错误。</p>
+    <p>尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身，需要把所有用到的内部变量改写成函数的参数</p>
+    <script>
+      //不使用尾递归优化 复杂度0(n)   阶乘案例
+      function factorial(n) {
+        if (n === 1) return 1;
+        return n * factorial(n - 1);
+      }
+      //尾递归优化 复杂度O(1)
+      function factorial2(n, total) {
+        if (n === 1) return total;
+        return factorial(n - 1, n * total);
+      }
+      factorial(10);
+      factorial2(10);
+    </script>
+  </body>
+</html>
