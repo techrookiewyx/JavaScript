@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>尾调用优化</title>
+  </head>
+  <body>
+    <h1>尾调用优化</h1>
+    <p>简单来说尾调用就是在函数的最后一步调用另一个函数</p>、
+    <p>只有不再用到外层函数的内部变量，内层函数的调用帧才会取代外层函数的调用帧，否则就无法进行“尾调用优化”</p>
+    <script>
+      function g(a) {
+        console.log(a);
+      }
+      //这就是尾调用优化
+      function f(x) {
+        return g(x);
+      }
+      f(2);
+      //下面的情况就不属于尾调用
+      function addOne(a) {
+        var one = 1;
+        function inner(b) {
+          return b + one; //这里内层函数用到了外层函数的one，所以不会进行尾调用优化
+        }
+        return inner(a);
+      }
+    </script>
+  </body>
+</html>
