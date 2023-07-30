@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for of</title>
+  </head>
+  <body>
+    <h1>for of循环</h1>
+    <p>
+      当使用for...of循环遍历某种数据结构时，该循环会自动去寻找 Iterator
+      接口，且循环过程中引擎就会自动调用这个对象上的迭代器方法，并将方法返回值赋值给for-of内的变量。
+    </p>
+    <script>
+      //数组的遍历
+      const arr = ["red", "green", "blue"];
+      for (let v of arr) {
+        console.log(v);
+      }
+      //Map和Set的遍历，遍历Set返回一个值，遍历Map返回一个数组
+      var engines = new Set(["Gecko", "Trident", "Webkit", "Webkit"]);
+      for (var e of engines) {
+        console.log(e);
+      }
+      var es6 = new Map();
+      es6.set("edition", 6);
+      es6.set("committee", "TC39");
+      for (var [name, value] of es6) {
+        console.log(name + ": " + value);
+      }
+      // 字符串
+      let str = "hello";
+      for (let s of str) {
+        console.log(s);
+      }
+      // arguments对象
+      function printArgs() {
+        for (let x of arguments) {
+          console.log(x);
+        }
+      }
+      printArgs("a", "b");
+    </script>
+  </body>
+</html>
