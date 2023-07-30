@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iterator对象</title>
+  </head>
+  <body>
+    <h1>Iterator对象</h1>
+    <p>Iterator 是一种接口，目的是为不同的数据结构提供统一的数据访问机制，任何数据结构只要部署 Iterator 接口，就可以完成遍历操作</p>
+    <script>
+      //默认的Iterator接口部署在数据结构的Symbol.iterator属性
+      //此时obj具有我们自定义的Symbol.iterator属性，那么它就是一个可迭代对象
+      let obj ={
+        [Symbol.iterator]:function(){
+          return {
+            next: function () {
+              return {
+                value: 1,
+                done: true
+              }
+            }
+          }
+        }
+      }
+      //有些对象天生具备该属性比如数组
+      let arr = ['a', 'b', 'c'];
+      let iter = arr[Symbol.iterator]();
+      console.log(iter.next());
+      console.log(iter.next());
+      console.log(iter.next());
+    </script>
+  </body>
+</html>
