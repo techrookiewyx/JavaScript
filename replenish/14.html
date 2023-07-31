@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set属性和方法</title>
+  </head>
+  <body>
+    <h1>Set属性和方法</h1>
+    <p>size、add()、has()、delete()、clear()</p>
+    <script>
+      //add用于向Set中添加成员
+      let s = new Set();
+      s.add(1).add(2).add(2);
+      console.log(s.size); //size表示set中成员的个数
+      //has用于判断Set中是否包含某个成员，返回一个布尔值
+      console.log(s.has(1));
+      console.log(s.has(2));
+      console.log(s.has(3));
+      s.delete(2); //delete删除某个成员，返回布尔值表示是否删除成功
+      console.log(s.has(2));
+      //set的遍历方法keys()、values()、entries()
+      let set = new Set(["red", "green", "blue"]);
+      for (let item of set.keys()) {
+        console.log(item);
+      }
+      // red
+      // green
+      // blue
+      for (let item of set.values()) {
+        console.log(item);
+      }
+      // red
+      // green
+      // blue
+      for (let item of set.entries()) {
+        console.log(item);
+      }
+      // ["red", "red"]
+      // ["green", "green"]
+    </script>
+  </body>
+</html>
