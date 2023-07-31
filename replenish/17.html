@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <h1>Map</h1>
+    <p>它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键</p>
+    <script>
+      //可以将任何类型作为Map的键
+      const m = new Map();
+      const o = { p: "Hello World" };
+      m.set(o, "content");
+      console.log(m.get(0));
+      //对同一个键多次赋值，后面的值将覆盖前面的值
+      const map = new Map();
+      map.set(1, "aaa").set(1, "bbb");
+      console.log(map.get(1));
+      //Map中键名是跟内存地址绑定的
+      let map2 = new Map();
+      map2.set(-0, 123);
+      console.log(map2.get(+0));
+    </script>
+  </body>
+</html>
