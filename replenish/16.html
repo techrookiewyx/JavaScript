@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeakSet的属性和方法</title>
+  </head>
+  <body>
+    <h1>WeakSet的属性和方法</h1>
+    <p>WeakSet没有size属性，且不能遍历因为其成员随时可以被垃圾回收</p>
+    <p>WeakSet有keys()、values()、has()方法</p>
+    <script>
+      const ws = new WeakSet();
+      const obj ={};
+      const foo = {};
+      ws.add(window);
+      ws.add(obj); //为WeakSet添加成员
+      console.log(ws.has(window));
+      console.log(ws.has(foo));
+      ws.delete(window); // true
+      console.log(ws.has(window));
+      //无法获取size
+      console.log(ws.size); // undefined
+    </script>
+  </body>
+</html>
